@@ -1,7 +1,10 @@
-import requests
+import requests;
+import os;
 
 running = True
 api_endpoint = "http://localhost/devices/"
 
 while running:
-    post(api_endpoint)
+    requests.post(api_endpoint, headers={
+        "DAEMON_SECRET": os.getenv("DAEMON_SECRET", "xxxx-xxxx-xxxx-xxxx")
+    })
