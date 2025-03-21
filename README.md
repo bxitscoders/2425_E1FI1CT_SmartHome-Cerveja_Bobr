@@ -4,13 +4,13 @@
 
 ### Project Scope
 > Server
-> > Collects data from registered Daemons, And offers WebUI
+> > Collects data from registered Daemons, And offers WebUI<br>
 > > Written in sveltekit
 
 > Daemon
-> > Sends data from the sensors to the server
+> > Sends data from the sensors to the server<br>
 > > Uses Python
 
 > Client App
-> > Basically the same thing as website but in a mobile application
+> > Basically the same thing as website but in a mobile application<br>
 > > Written in?
