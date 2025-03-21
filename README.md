@@ -6,9 +6,11 @@
 > Server
 > > Collects data from registered Daemons, And offers WebUI
 > > Written in sveltekit
+
 > Daemon
 > > Sends data from the sensors to the server
 > > Uses Python
+
 > Client App
 > > Basically the same thing as website but in a mobile application
 > > Written in?
