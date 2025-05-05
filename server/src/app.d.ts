@@ -3,11 +3,7 @@
 declare global {
 	namespace App {
 		// interface Error {}
-		interface Locals {
-			db: import("mongodb").Db | import("nedb-promises"),
-			daemon: import("nedb-promises") | null,
-			user?: { id: string } | null;
-		}
+		// interface Locals {}
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}

@@ -1,95 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import 'tailwindcss';
-@plugin '@tailwindcss/forms';
-@plugin '@tailwindcss/typography';
+
+@theme {
+    --color-primary-bg: #000;
+    --color-secondary-bg: #3a3a3a;
+}
 
 :root {
-
-	--background-raised: rgb(33, 33, 33);
-	--background-raised-hover: rgb(37, 37, 37);
-
-	--background-primary: rgb(15, 15, 15);
-	--background-primary-hover: rgb(25, 25, 25);
-
-	--text-primary: #E0F7FA;
-	--text-secondary: #88C0D0;
+    @apply bg-primary-bg;
 }
 
-* {
-	user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-}
-
-body {
-	@apply bg-[var(--background-primary)] text-[var(--text-primary)];
-	font-family: 'Inter', 'Roboto', 'Poppins', 'sans-serif';
-}
-
-/*Containers*/
-.article-mini {
-	@apply grid bg-[var(--background-raised)] p-4 rounded-xl min-h-20 min-w-40 hover:bg-[var(--background-raised-hover)] hover:shadow-lg hover:cursor-pointer transition;
-	grid-template-rows: 1fr 1fr;
-}
-
-/*Input / Buttons*/
-input {
-    @apply w-full rounded-lg border border-[var(--background-primary)] bg-[var(--background-raised-hover)] p-3 text-gray-200 focus:ring focus:ring-cyan-500 disabled:cursor-not-allowed disabled:!text-gray-500 disabled:!select-none;
-}
-
-input.invalid {
-    @apply border-red-400 focus:ring focus:ring-red-400;
-}
-
-input.valid {
-    @apply border-green-400 focus:ring focus:ring-green-400;
-}
-
-label {
-    @apply mb-2 block text-gray-300;
-}
-
-button {
-    @apply w-full rounded-lg bg-cyan-600 px-6 py-2 font-semibold text-white transition hover:bg-cyan-700 disabled:bg-gray-500 disabled:text-gray-300;
-}
-
-.href {
-	@apply text-blue-400 hover:underline cursor-pointer;
-}
-
-/* Loader */
-.loading-overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background: rgba(0, 0, 0, 0.5);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 9999;
-}
-
-.loading-overlay-hide {
-	display: none;
-}
-
-.spinner {
-	width: 50px;
-	height: 50px;
-	border: 5px solid #fff;
-	border-top: 5px solid cyan;
-	border-radius: 50%;
-	animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+.device {
+    @apply bg-secondary-bg text-white;
 }
