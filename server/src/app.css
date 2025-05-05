@@ -10,5 +10,5 @@
 }
 
 .device {
-    @apply bg-secondary-bg;
+    @apply bg-secondary-bg text-white;
 }
