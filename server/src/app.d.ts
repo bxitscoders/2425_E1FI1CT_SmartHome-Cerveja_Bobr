@@ -5,6 +5,7 @@ declare global {
 		// interface Error {}
 		interface Locals {
 			db: import("mongodb").Db | import("nedb-promises"),
+			daemon: import("nedb-promises") | null,
 			user?: { id: string } | null;
 		}
 		// interface PageData {}

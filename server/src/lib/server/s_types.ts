@@ -4,3 +4,9 @@ export type user = {
     email: string,
     password: string
 }
+
+export type daemon = {
+    _id: string,
+    auth_token: string,
+    polling_rate: number
+}

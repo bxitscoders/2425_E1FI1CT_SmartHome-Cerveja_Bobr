@@ -18,3 +18,28 @@
 </div>
 
 {@render children()}
+
+<style>
+	a {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-primary); 
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--text-primary);
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.3s ease-out;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+}
+</style>

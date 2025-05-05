@@ -13,6 +13,7 @@ const protectedPaths = [
 ];
 
 let db : any;
+let daemons : any;
 let client : MongoClient;
 
 export const handleAuth: Handle = async ({ event, resolve }) => {
@@ -58,9 +59,19 @@ const handleNEDB: Handle = async ({event, resolve}) => {
     return resolve(event);
 }
 
+const handle_Daemon : Handle = async ({event, resolve}) => {
+    if(!daemons) {
+        daemons = Datastore.create({filename: "./database/daemons.db", autoload: true})
+    }
+
+    event.locals.daemon = daemons;
+
+    return resolve(event)
+}
+
 const handleDB: Handle = async ({event, resolve}) => {
     if(env.DB_TECH?.toLowerCase() == "nedb" ) return handleNEDB({event, resolve});
     return handleMongo({event, resolve});
 }
 
-export const handle: Handle = sequence(handleAuth, handleDB);
+export const handle: Handle = sequence(handleAuth, handleDB, handle_Daemon);

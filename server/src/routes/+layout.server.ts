@@ -1,6 +1,6 @@
 import type { LayoutServerLoad } from './$types';
 
-export const load: LayoutServerLoad = (): {
+export const load: LayoutServerLoad = (request): {
 	elements: {
 		alt: string;
 		text: string;
@@ -8,18 +8,24 @@ export const load: LayoutServerLoad = (): {
 		href?: string;
 	}[];
 } => {
+	request.locals.user
+	let isAdmin = true; // For testing Reason true (Bobr)
+	let arr = []
+
+	arr.push({
+		alt: 'home',
+		text: 'SmartHome',
+		href: '/'
+	})
+
+	if(isAdmin) {
+		arr.push({
+			alt: 'admin_dash',
+			text: 'Admin',
+			href: '/admin'
+		})
+	}
 	return {
-		elements: [
-			{
-				alt: 'home',
-				text: 'SmartHome',
-				href: '/'
-			},
-			{
-				alt: 'admin_dash',
-				text: 'Admin',
-				href: '/admin'
-			}
-		]
+		elements: arr
 	};
 };
